@@ -8,8 +8,7 @@ public class Mommifier {
     public static final String MOMMY = "mommy";
 
     public String mommify(String input) {
-        if(input.length() == 0)
-            return "";
+        String result = "";
         int count = 0;
         List<Character> vowels = getVowelList();
         for (char character : input.toCharArray()) {
@@ -17,9 +16,16 @@ public class Mommifier {
                 count++;
             }
         }
-        if(count/input.length() < 0.03)
+        if (input.length() == 0 || (double)count / (double)input.length() < 0.03)
             return input;
-        return MOMMY;
+        for (char character : input.toCharArray()) {
+            if (!vowels.contains(character)) {
+                result += character;
+            } else {
+                result += MOMMY;
+            }
+        }
+        return result;
     }
 
     private List<Character> getVowelList() {

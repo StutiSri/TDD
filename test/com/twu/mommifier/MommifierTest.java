@@ -42,4 +42,10 @@ public class MommifierTest {
         assertEquals("abcdefghij", mommifier.mommify("abcdefghij"));
     }
 
+    @Test
+    public void shouldMommifyStringHavingMoreThan30PercentVowels(){
+        Mommifier mommifier = new Mommifier();
+        assertEquals("hmommyr", mommifier.mommify("her"));
+    }
+
 }
