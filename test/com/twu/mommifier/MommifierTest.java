@@ -48,4 +48,10 @@ public class MommifierTest {
         assertEquals("hmommyr", mommifier.mommify("her"));
     }
 
+    @Test
+    public void shouldMommifyStringHavingMoreThan30PercentVowelsInAConsecutiveSet(){
+        Mommifier mommifier = new Mommifier();
+        assertEquals("hmommyr", mommifier.mommify("hear"));
+    }
+
 }

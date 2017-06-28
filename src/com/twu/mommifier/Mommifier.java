@@ -9,6 +9,7 @@ public class Mommifier {
 
     public String mommify(String input) {
         String result = "";
+        boolean isSetMummified = false;
         int count = 0;
         List<Character> vowels = getVowelList();
         for (char character : input.toCharArray()) {
@@ -16,13 +17,15 @@ public class Mommifier {
                 count++;
             }
         }
-        if (input.length() == 0 || (double)count / (double)input.length() < 0.03)
+        if (input.length() == 0 || (double)count / (double)input.length() <= 0.3)
             return input;
         for (char character : input.toCharArray()) {
             if (!vowels.contains(character)) {
                 result += character;
-            } else {
+                isSetMummified = false;
+            } else if(!isSetMummified){
                 result += MOMMY;
+                isSetMummified = true;
             }
         }
         return result;
