@@ -2,8 +2,6 @@ package com.twu.mommifier;
 
 import org.junit.Test;
 
-import java.lang.annotation.Target;
-
 import static org.junit.Assert.assertEquals;
 
 public class MommifierTest {
@@ -52,6 +50,12 @@ public class MommifierTest {
     public void shouldMommifyStringHavingMoreThan30PercentVowelsInAConsecutiveSet(){
         Mommifier mommifier = new Mommifier();
         assertEquals("hmommyr", mommifier.mommify("hear"));
+    }
+
+    @Test
+    public void shouldMommifyStringHavingMoreThan30PercentVowelsInTwoConsecutiveSets(){
+        Mommifier mommifier = new Mommifier();
+        assertEquals("hmommyllmommy", mommifier.mommify("hello"));
     }
 
 }

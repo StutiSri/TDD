@@ -6,29 +6,42 @@ import java.util.List;
 public class Mommifier {
 
     public static final String MOMMY = "mommy";
+    private final List<Character> vowelList = getVowelList();
 
     public String mommify(String input) {
-        String result = "";
-        boolean isSetMummified = false;
-        int count = 0;
-        List<Character> vowels = getVowelList();
+        if (!canBeMummified(input))
+            return input;
+
+        StringBuilder result = new StringBuilder();
+        boolean isVowelSetMummified = false;
         for (char character : input.toCharArray()) {
-            if (vowels.contains(character)) {
+            if (!vowelList.contains(character)) {
+                result.append(character);
+                isVowelSetMummified = false;
+            } else if (!isVowelSetMummified) {
+                result.append(MOMMY);
+                isVowelSetMummified = true;
+            }
+        }
+
+        return result.toString();
+    }
+
+    private boolean canBeMummified(String input) {
+        int count = getCountOfVowels(input);
+        if (input.length() == 0 || (double) count / (double) input.length() <= 0.30)
+            return false;
+        return true;
+    }
+
+    private int getCountOfVowels(String input) {
+        int count = 0;
+        for (char character : input.toCharArray()) {
+            if (vowelList.contains(character)) {
                 count++;
             }
         }
-        if (input.length() == 0 || (double)count / (double)input.length() <= 0.3)
-            return input;
-        for (char character : input.toCharArray()) {
-            if (!vowels.contains(character)) {
-                result += character;
-                isSetMummified = false;
-            } else if(!isSetMummified){
-                result += MOMMY;
-                isSetMummified = true;
-            }
-        }
-        return result;
+        return count;
     }
 
     private List<Character> getVowelList() {
