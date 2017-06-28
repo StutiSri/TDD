@@ -21,10 +21,25 @@ public class MommifierTest {
     }
 
     @Test
-    public void shouldMommifyVowelString(){
+    public void shouldMommifySingleVowelString(){
         Mommifier mommifier = new Mommifier();
         assertEquals("mommy", mommifier.mommify("a"));
+        assertEquals("mommy", mommifier.mommify("e"));
         assertEquals("mommy", mommifier.mommify("i"));
+        assertEquals("mommy", mommifier.mommify("o"));
+        assertEquals("mommy", mommifier.mommify("u"));
+    }
+
+    @Test
+    public void shouldNotMommifyStringHavingLessThan30PercentVowels(){
+        Mommifier mommifier = new Mommifier();
+        assertEquals("hard", mommifier.mommify("hard"));
+    }
+
+    @Test
+    public void shouldNotMommifyStringHavingExactly30PercentVowels(){
+        Mommifier mommifier = new Mommifier();
+        assertEquals("abcdefghij", mommifier.mommify("abcdefghij"));
     }
 
 }
