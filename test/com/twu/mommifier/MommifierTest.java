@@ -5,9 +5,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class MommifierTest {
-
     @Test
     public void shouldNotMommifyEmptyString(){
+        //TODO: This is duplicated in every test case.
         Mommifier mommifier = new Mommifier();
         assertEquals("", mommifier.mommify(""));
     }
@@ -46,16 +46,19 @@ public class MommifierTest {
         assertEquals("hmommyr", mommifier.mommify("her"));
     }
 
+    //TODO: Can you think of a different name? What do you want to do to consecutive vowels?
     @Test
     public void shouldMommifyStringHavingMoreThan30PercentVowelsInAConsecutiveSet(){
         Mommifier mommifier = new Mommifier();
         assertEquals("hmommyr", mommifier.mommify("hear"));
     }
 
+    //TODO: What are the consecutive sets here?
     @Test
     public void shouldMommifyStringHavingMoreThan30PercentVowelsInTwoConsecutiveSets(){
         Mommifier mommifier = new Mommifier();
         assertEquals("hmommyllmommy", mommifier.mommify("hello"));
     }
 
+    //TODO: Can you think of more test cases? Sad path and edge cases or any others?
 }
