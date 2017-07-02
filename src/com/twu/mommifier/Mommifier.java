@@ -11,6 +11,7 @@ public class Mommifier {
 
     //TODO: Can you find out a better way to initialize this?
     private final List<Character> vowelList = getVowelList();
+    private final double THIRTY_PERCENT = 0.30;
 
     //TODO: Long method! Could you try simplifying this?
     public String mommify(String input) {
@@ -49,10 +50,14 @@ public class Mommifier {
             2. What is 0.30 magic number?
             3. What is the return type of the conditional and that of canBeMommified method?
             4. What is your percentage vowel when string is empty? Do you need the check?
+                 - the check is needed to avoid the NullPointerException at line 58
          */
-        if (input.length() == 0 || (double) count / (double) input.length() <= 0.30)
+        if(input.length() == 0)
             return false;
-        return true;
+
+        double percentageOfVowelsPresentInString = (double) count / (double) input.length();
+
+        return percentageOfVowelsPresentInString > THIRTY_PERCENT;
     }
 
     private int getCountOfVowels(String input) {
