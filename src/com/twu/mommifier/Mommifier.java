@@ -5,16 +5,16 @@ import java.util.List;
 
 //TODO: Be consistent with mommify and mommify
 
-public class Mommifier {
+class Mommifier {
     //TODO: Where is this being accessed from? Is it being accessed outside of the class?
-    public static final String MOMMY = "mommy";
+    static final String MOMMY = "mommy";
 
     //TODO: Can you find out a better way to initialize this?
     private final List<Character> vowelList = getVowelList();
     private final double THIRTY_PERCENT = 0.30;
 
     //TODO: Long method! Could you try simplifying this?
-    public String mommify(String input) {
+    String mommify(String input) {
         input = input.toLowerCase();
         //Good use of guard clause!
         if (!canBeMommified(input))
