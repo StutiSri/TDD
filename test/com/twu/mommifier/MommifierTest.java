@@ -1,20 +1,27 @@
 package com.twu.mommifier;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class MommifierTest {
+
+    private Mommifier mommifier;
+
+    @Before
+    public void setUp(){
+        mommifier = new Mommifier();
+    }
+
     @Test
     public void shouldNotMommifyEmptyString(){
         //TODO: This is duplicated in every test case.
-        Mommifier mommifier = new Mommifier();
         assertEquals("", mommifier.mommify(""));
     }
 
     @Test
     public void shouldNotMommifyNonVowelString(){
-        Mommifier mommifier = new Mommifier();
         assertEquals("b", mommifier.mommify("b"));
     }
 
@@ -48,7 +55,7 @@ public class MommifierTest {
 
     //TODO: Can you think of a different name? What do you want to do to consecutive vowels?
     @Test
-    public void shouldMommifyStringHavingMoreThan30PercentVowelsInAConsecutiveSet(){
+    public void shouldMommifyStringHavingMoreThan30PercentVowelsInAContinuousSet(){
         Mommifier mommifier = new Mommifier();
         assertEquals("hmommyr", mommifier.mommify("hear"));
     }
