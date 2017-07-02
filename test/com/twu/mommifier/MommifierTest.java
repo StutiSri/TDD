@@ -55,14 +55,14 @@ public class MommifierTest {
 
     //TODO: Can you think of a different name? What do you want to do to consecutive vowels?
     @Test
-    public void shouldMommifyStringHavingMoreThan30PercentVowelsInAContinuousSet(){
+    public void shouldReplaceOneContinuousSetOfVowelsWithWordMommy(){
         Mommifier mommifier = new Mommifier();
         assertEquals("hmommyr", mommifier.mommify("hear"));
     }
 
     //TODO: What are the consecutive sets here?
     @Test
-    public void shouldMommifyStringHavingMoreThan30PercentVowelsInTwoConsecutiveSets(){
+    public void shouldReplaceEachOccurrenceOfAContinuousSetOfVowelsWithWordMommy(){
         Mommifier mommifier = new Mommifier();
         assertEquals("hmommyllmommy", mommifier.mommify("hello"));
     }
