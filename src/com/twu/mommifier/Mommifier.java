@@ -7,11 +7,15 @@ import java.util.List;
 
 class Mommifier {
     //TODO: Where is this being accessed from? Is it being accessed outside of the class?
-    static final String MOMMY = "mommy";
+    private final String MOMMY = "mommy";
+    private final double THIRTY_PERCENT = 0.30;
 
     //TODO: Can you find out a better way to initialize this?
-    private final List<Character> vowelList = getVowelList();
-    private final double THIRTY_PERCENT = 0.30;
+    private final List<Character> vowelList;
+
+    public Mommifier() {
+        vowelList = getVowelList();
+    }
 
     //TODO: Long method! Could you try simplifying this?
     String mommify(String input) {
