@@ -3,7 +3,7 @@ package com.twu.mommifier;
 import java.util.ArrayList;
 import java.util.List;
 
-//TODO: Be consistent with mommify and mummify
+//TODO: Be consistent with mommify and mommify
 
 public class Mommifier {
     //TODO: Where is this being accessed from? Is it being accessed outside of the class?
@@ -16,31 +16,38 @@ public class Mommifier {
     public String mommify(String input) {
         input = input.toLowerCase();
         //Good use of guard clause!
-        if (!canBeMummified(input))
+        if (!canBeMommified(input))
             return input;
 
+        return getMommifiedString(input);
+    }
+
+    private String getMommifiedString(String input) {
         StringBuilder result = new StringBuilder();
-        boolean isVowelSetMummified = false;
+        boolean isVowelSetFound = false;
+
         for (char character : input.toCharArray()) {
-            if (!vowelList.contains(character)) {
+            if(vowelList.contains(character)){
+                if(!isVowelSetFound)
+                    result.append(MOMMY);
+                isVowelSetFound = true;
+            }
+            else{
                 result.append(character);
-                isVowelSetMummified = false;
-            } else if (!isVowelSetMummified) {
-                result.append(MOMMY);
-                isVowelSetMummified = true;
+                isVowelSetFound = false;
             }
         }
 
         return result.toString();
     }
 
-    private boolean canBeMummified(String input) {
+    private boolean canBeMommified(String input) {
         int count = getCountOfVowels(input);
         /*
             TODO: Simplify this block.
             1. This is a long conditional. What is being compared to 0.30? Difficult to understand.
             2. What is 0.30 magic number?
-            3. What is the return type of the conditional and that of canBeMummified method?
+            3. What is the return type of the conditional and that of canBeMommified method?
             4. What is your percentage vowel when string is empty? Do you need the check?
          */
         if (input.length() == 0 || (double) count / (double) input.length() <= 0.30)
