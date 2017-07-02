@@ -62,4 +62,8 @@ public class MommifierTest {
     }
 
     //TODO: Can you think of more test cases? Sad path and edge cases or any others?
+    @Test
+    public void shouldMommifyStringHavingUppercaseCharacters(){
+        assertEquals("pmommylmommy", mommifier.mommify("paULA"));
+    }
 }

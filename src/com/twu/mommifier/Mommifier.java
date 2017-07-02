@@ -14,6 +14,7 @@ public class Mommifier {
 
     //TODO: Long method! Could you try simplifying this?
     public String mommify(String input) {
+        input = input.toLowerCase();
         //Good use of guard clause!
         if (!canBeMummified(input))
             return input;
