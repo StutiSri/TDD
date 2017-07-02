@@ -27,7 +27,6 @@ public class MommifierTest {
 
     @Test
     public void shouldMommifySingleVowelString(){
-        Mommifier mommifier = new Mommifier();
         assertEquals("mommy", mommifier.mommify("a"));
         assertEquals("mommy", mommifier.mommify("e"));
         assertEquals("mommy", mommifier.mommify("i"));
@@ -37,33 +36,28 @@ public class MommifierTest {
 
     @Test
     public void shouldNotMommifyStringHavingLessThan30PercentVowels(){
-        Mommifier mommifier = new Mommifier();
         assertEquals("hard", mommifier.mommify("hard"));
     }
 
     @Test
     public void shouldNotMommifyStringHavingExactly30PercentVowels(){
-        Mommifier mommifier = new Mommifier();
         assertEquals("abcdefghij", mommifier.mommify("abcdefghij"));
     }
 
     @Test
     public void shouldMommifyStringHavingMoreThan30PercentVowels(){
-        Mommifier mommifier = new Mommifier();
         assertEquals("hmommyr", mommifier.mommify("her"));
     }
 
     //TODO: Can you think of a different name? What do you want to do to consecutive vowels?
     @Test
     public void shouldReplaceOneContinuousSetOfVowelsWithWordMommy(){
-        Mommifier mommifier = new Mommifier();
         assertEquals("hmommyr", mommifier.mommify("hear"));
     }
 
     //TODO: What are the consecutive sets here?
     @Test
     public void shouldReplaceEachOccurrenceOfAContinuousSetOfVowelsWithWordMommy(){
-        Mommifier mommifier = new Mommifier();
         assertEquals("hmommyllmommy", mommifier.mommify("hello"));
     }
 
