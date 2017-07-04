@@ -1,32 +1,32 @@
 package com.twu.mommifier;
-
+//TODO: Format code
 import java.util.ArrayList;
 import java.util.List;
 
-//TODO: Be consistent with mommify and mommify
-
 class Mommifier {
-    //TODO: Where is this being accessed from? Is it being accessed outside of the class?
     private final String MOMMY = "mommy";
+    //TODO: What is this thirty percent intended to do? Do you think the name is good enough? What is it's significance?
     private final double THIRTY_PERCENT = 0.30;
 
-    //TODO: Can you find out a better way to initialize this?
     private final List<Character> vowelList;
 
+    /*
+        TODO: Another way of doing this is create a static list and initialize it up there at the time of declaration.
+         You don't necessarily need a method.
+     */
     public Mommifier() {
         vowelList = getVowelList();
     }
 
-    //TODO: Long method! Could you try simplifying this?
     String mommify(String input) {
         input = input.toLowerCase();
-        //Good use of guard clause!
         if (!canBeMommified(input))
             return input;
 
         return getMommifiedString(input);
     }
 
+    //TODO: This is a long method. Can you try to refactor this?
     private String getMommifiedString(String input) {
         StringBuilder result = new StringBuilder();
         boolean isVowelSetFound = false;
@@ -48,14 +48,8 @@ class Mommifier {
 
     private boolean canBeMommified(String input) {
         int count = getCountOfVowels(input);
-        /*
-            TODO: Simplify this block.
-            1. This is a long conditional. What is being compared to 0.30? Difficult to understand.
-            2. What is 0.30 magic number?
-            3. What is the return type of the conditional and that of canBeMommified method?
-            4. What is your percentage vowel when string is empty? Do you need the check?
-                 - the check is needed to avoid the NullPointerException at line 58
-         */
+
+        //TODO: What will be the count of vowels for empty string?
         if(input.length() == 0)
             return false;
 

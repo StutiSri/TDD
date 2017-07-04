@@ -1,3 +1,8 @@
+Good small commits.
+
+Remember to format the code.
+
+-----------
 * Over all good test names describing the intent
 * Good solution - simple to read and understand
 * Generally good commit messages

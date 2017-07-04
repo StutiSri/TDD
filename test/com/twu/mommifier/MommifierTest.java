@@ -16,7 +16,6 @@ public class MommifierTest {
 
     @Test
     public void shouldNotMommifyEmptyString(){
-        //TODO: This is duplicated in every test case.
         assertEquals("", mommifier.mommify(""));
     }
 
@@ -49,21 +48,21 @@ public class MommifierTest {
         assertEquals("hmommyr", mommifier.mommify("her"));
     }
 
-    //TODO: Can you think of a different name? What do you want to do to consecutive vowels?
     @Test
     public void shouldReplaceOneContinuousSetOfVowelsWithWordMommy(){
         assertEquals("hmommyr", mommifier.mommify("hear"));
     }
 
-    //TODO: What are the consecutive sets here?
+    //TODO: In the input example do you have a continuous set of vowels?
     @Test
     public void shouldReplaceEachOccurrenceOfAContinuousSetOfVowelsWithWordMommy(){
         assertEquals("hmommyllmommy", mommifier.mommify("hello"));
     }
 
-    //TODO: Can you think of more test cases? Sad path and edge cases or any others?
     @Test
     public void shouldMommifyStringHavingUppercaseCharacters(){
         assertEquals("pmommylmommy", mommifier.mommify("paULA"));
     }
+
+    //TODO: What happens on null input?
 }
