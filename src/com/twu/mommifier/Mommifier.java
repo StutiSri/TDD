@@ -45,13 +45,13 @@ class Mommifier {
     }
 
     private boolean canBeMommified(String input) {
-        int count = getCountOfVowels(input);
+        int countOfVowels = getCountOfVowels(input);
 
         //TODO: What will be the count of vowels for empty string?
-        if(count == 0)
+        if(countOfVowels == 0)
             return false;
 
-        double percentageOfVowelsPresentInString = (double) count / (double) input.length();
+        double percentageOfVowelsPresentInString = (double) countOfVowels / (double) input.length();
 
         return percentageOfVowelsPresentInString > THIRTY_PERCENT;
     }
