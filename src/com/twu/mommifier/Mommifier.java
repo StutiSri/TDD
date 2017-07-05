@@ -17,6 +17,9 @@ class Mommifier {
      */
 
     String mommify(String input) {
+        if(input == null)
+            return input;
+
         input = input.toLowerCase();
         if (!canBeMommified(input))
             return input;
