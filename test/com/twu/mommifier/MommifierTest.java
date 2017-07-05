@@ -56,7 +56,7 @@ public class MommifierTest {
     //TODO: In the input example do you have a continuous set of vowels?
     @Test
     public void shouldReplaceEachOccurrenceOfAContinuousSetOfVowelsWithWordMommy(){
-        assertEquals("hmommyllmommy", mommifier.mommify("hello"));
+        assertEquals("hmommyllmommy", mommifier.mommify("heaelloee"));
     }
 
     @Test
