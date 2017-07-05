@@ -1,6 +1,7 @@
 package com.twu.mommifier;
 //TODO: Format code
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 class Mommifier {
@@ -8,15 +9,12 @@ class Mommifier {
     //TODO: What is this thirty percent intended to do? Do you think the name is good enough? What is it's significance?
     private final double THIRTY_PERCENT = 0.30;
 
-    private final List<Character> vowelList;
+    private static final List<Character> vowelList = Arrays.asList('a', 'e', 'i', 'o', 'u');
 
     /*
         TODO: Another way of doing this is create a static list and initialize it up there at the time of declaration.
          You don't necessarily need a method.
      */
-    public Mommifier() {
-        vowelList = getVowelList();
-    }
 
     String mommify(String input) {
         input = input.toLowerCase();
@@ -68,13 +66,4 @@ class Mommifier {
         return count;
     }
 
-    private List<Character> getVowelList() {
-        List<Character> vowels = new ArrayList<>();
-        vowels.add('a');
-        vowels.add('e');
-        vowels.add('i');
-        vowels.add('o');
-        vowels.add('u');
-        return vowels;
-    }
 }
