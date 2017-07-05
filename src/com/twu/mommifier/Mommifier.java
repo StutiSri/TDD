@@ -48,7 +48,7 @@ class Mommifier {
         int count = getCountOfVowels(input);
 
         //TODO: What will be the count of vowels for empty string?
-        if(input.length() == 0)
+        if(count == 0)
             return false;
 
         double percentageOfVowelsPresentInString = (double) count / (double) input.length();
