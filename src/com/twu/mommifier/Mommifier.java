@@ -1,5 +1,6 @@
 package com.twu.mommifier;
 //TODO: Format code
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,7 +18,7 @@ class Mommifier {
      */
 
     String mommify(String input) {
-        if(input == null)
+        if (input == null)
             return input;
 
         input = input.toLowerCase();
@@ -29,29 +30,36 @@ class Mommifier {
 
     //TODO: This is a long method. Can you try to refactor this?
     private String getMommifiedString(String input) {
+        char[] inputCharacters = input.toCharArray();
         StringBuilder result = new StringBuilder();
-        boolean isVowelSetFound = false;
 
-        for (char character : input.toCharArray()) {
-            if(vowelList.contains(character)){
-                if(!isVowelSetFound)
-                    result.append(MOMMY);
-                isVowelSetFound = true;
-            }
-            else{
-                result.append(character);
-                isVowelSetFound = false;
-            }
+
+        for (int index = 0; index < inputCharacters.length; index++) {
+            result.append(next(inputCharacters, index, index - 1));
         }
 
         return result.toString();
+    }
+
+    private String next(char[] inputCharacters, int currentIndex, int previousIndex) {
+        char currentCharacter = inputCharacters[currentIndex];
+        if(isVowel(currentCharacter)){
+            if (previousIndex < 0 || !isVowel(inputCharacters[previousIndex]))
+                return MOMMY;
+            return "";
+        }
+        return "" + currentCharacter;
+    }
+
+    private boolean isVowel(char character) {
+        return vowelList.contains(character);
     }
 
     private boolean canBeMommified(String input) {
         int countOfVowels = getCountOfVowels(input);
 
         //TODO: What will be the count of vowels for empty string?
-        if(countOfVowels == 0)
+        if (countOfVowels == 0)
             return false;
 
         double percentageOfVowelsPresentInString = (double) countOfVowels / (double) input.length();
