@@ -30,8 +30,15 @@ class Mommifier {
     private String getMommifiedString(String input) {
         char[] inputCharacters = input.toCharArray();
         StringBuilder result = new StringBuilder();
-
-        //TODO: Can you keep the previous for loop format and try and do this?
+        /*
+            TODO: Can you keep the previous for loop format and try and do this?
+            Trying to use for each loop, is complicating the solution. Then I
+            have to keep track of the currentIndex without the loop . In this
+            current implementation I have to pass the input characters array
+            anyway to next method for identifying the previous character. Using
+            for each loop is not adding any value to the solution. Can yo help
+            me understand why using for each would be better in this case?
+        */
         for (int index = 0; index < inputCharacters.length; index++) {
             //TODO: Do you need both current index and previous index?
             result.append(next(inputCharacters, index));
