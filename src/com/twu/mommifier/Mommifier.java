@@ -49,7 +49,7 @@ class Mommifier {
             return "";
         }
         //TODO: Is there a better way to typecast it to string?
-        return "" + currentCharacter;
+        return Character.toString(currentCharacter);
     }
 
     private boolean isVowel(char character) {
