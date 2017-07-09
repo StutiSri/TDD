@@ -69,6 +69,8 @@ class Mommifier {
         /*
             TODO: If the count of vowels for empty string is zero, what would the percentage be?
             Will the canBeMommified return the same result as false?
+            The percentage would be zero only, and hence canBeMommified will
+            always return false for empty string.
          */
         if (countOfVowels == 0)
             return false;
