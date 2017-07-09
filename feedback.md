@@ -1,3 +1,9 @@
+* Good small commits.
+* Remember to optimize imports.
+* The point of refactoring is to make it more readable. The current `for` loop in `getMommifiedString`
+ makes it difficult to understand what's happening which beats the purpose.
+
+------
 Good small commits.
 
 Remember to format the code.

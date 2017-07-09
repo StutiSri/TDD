@@ -1,21 +1,19 @@
 package com.twu.mommifier;
-//TODO: Format code
 
+//TODO: Unused imports?!
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 class Mommifier {
     private final String MOMMY = "mommy";
-    //TODO: What is this thirty percent intended to do? Do you think the name is good enough? What is it's significance?
+    /*
+        TODO: What is this thirty percent intended to do? Do you think the name is good enough?
+        What is it's significance?
+     */
     private final double THIRTY_PERCENT = 0.30;
 
     private static final List<Character> vowelList = Arrays.asList('a', 'e', 'i', 'o', 'u');
-
-    /*
-        TODO: Another way of doing this is create a static list and initialize it up there at the time of declaration.
-         You don't necessarily need a method.
-     */
 
     String mommify(String input) {
         if (input == null)
@@ -33,8 +31,9 @@ class Mommifier {
         char[] inputCharacters = input.toCharArray();
         StringBuilder result = new StringBuilder();
 
-
+        //TODO: Can you keep the previous for loop format and try and do this?
         for (int index = 0; index < inputCharacters.length; index++) {
+            //TODO: Do you need both current index and previous index?
             result.append(next(inputCharacters, index, index - 1));
         }
 
@@ -48,6 +47,7 @@ class Mommifier {
                 return MOMMY;
             return "";
         }
+        //TODO: Is there a better way to typecast it to string?
         return "" + currentCharacter;
     }
 
@@ -58,7 +58,10 @@ class Mommifier {
     private boolean canBeMommified(String input) {
         int countOfVowels = getCountOfVowels(input);
 
-        //TODO: What will be the count of vowels for empty string?
+        /*
+            TODO: If the count of vowels for empty string is zero, what would the percentage be?
+            Will the canBeMommified return the same result as false?
+         */
         if (countOfVowels == 0)
             return false;
 

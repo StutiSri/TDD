@@ -54,7 +54,11 @@ public class MommifierTest {
         assertEquals("hmommyr", mommifier.mommify("hear"));
     }
 
-    //TODO: In the input example do you have a continuous set of vowels?
+    /*
+        TODO: I am confused as to what are you trying to test.
+        Are you testing that multiple vowels in string should be replaced or
+        consecutive vowels should be replaced?
+     */
     @Test
     public void shouldReplaceEachOccurrenceOfAContinuousSetOfVowelsWithWordMommy(){
         assertEquals("hmommyllmommy", mommifier.mommify("heaelloee"));
@@ -65,7 +69,6 @@ public class MommifierTest {
         assertEquals("pmommylmommy", mommifier.mommify("paULA"));
     }
 
-    //TODO: What happens on null input?
     @Test
     public void shouldNotMommifyNullString(){
         assertNull(mommifier.mommify(null));
