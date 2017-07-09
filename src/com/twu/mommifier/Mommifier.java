@@ -34,13 +34,14 @@ class Mommifier {
         //TODO: Can you keep the previous for loop format and try and do this?
         for (int index = 0; index < inputCharacters.length; index++) {
             //TODO: Do you need both current index and previous index?
-            result.append(next(inputCharacters, index, index - 1));
+            result.append(next(inputCharacters, index));
         }
 
         return result.toString();
     }
 
-    private String next(char[] inputCharacters, int currentIndex, int previousIndex) {
+    private String next(char[] inputCharacters, int currentIndex) {
+        int previousIndex = currentIndex - 1;
         char currentCharacter = inputCharacters[currentIndex];
         if (isVowel(currentCharacter)) {
             if (previousIndex < 0 || !isVowel(inputCharacters[previousIndex]))
