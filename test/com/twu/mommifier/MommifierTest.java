@@ -11,22 +11,22 @@ public class MommifierTest {
     private Mommifier mommifier;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         mommifier = new Mommifier();
     }
 
     @Test
-    public void shouldNotMommifyEmptyString(){
+    public void shouldNotMommifyEmptyString() {
         assertEquals("", mommifier.mommify(""));
     }
 
     @Test
-    public void shouldNotMommifyNonVowelString(){
+    public void shouldNotMommifyNonVowelString() {
         assertEquals("b", mommifier.mommify("b"));
     }
 
     @Test
-    public void shouldMommifySingleVowelString(){
+    public void shouldMommifySingleVowelString() {
         assertEquals("mommy", mommifier.mommify("a"));
         assertEquals("mommy", mommifier.mommify("e"));
         assertEquals("mommy", mommifier.mommify("i"));
@@ -35,22 +35,22 @@ public class MommifierTest {
     }
 
     @Test
-    public void shouldNotMommifyStringHavingLessThan30PercentVowels(){
+    public void shouldNotMommifyStringHavingLessThan30PercentVowels() {
         assertEquals("hard", mommifier.mommify("hard"));
     }
 
     @Test
-    public void shouldNotMommifyStringHavingExactly30PercentVowels(){
+    public void shouldNotMommifyStringHavingExactly30PercentVowels() {
         assertEquals("abcdefghij", mommifier.mommify("abcdefghij"));
     }
 
     @Test
-    public void shouldMommifyStringHavingMoreThan30PercentVowels(){
+    public void shouldMommifyStringHavingMoreThan30PercentVowels() {
         assertEquals("hmommyr", mommifier.mommify("her"));
     }
 
     @Test
-    public void shouldReplaceOneContinuousSetOfVowelsWithWordMommy(){
+    public void shouldReplaceOneContinuousSetOfVowelsWithWordMommy() {
         assertEquals("hmommyr", mommifier.mommify("hear"));
     }
 
@@ -60,17 +60,17 @@ public class MommifierTest {
         consecutive vowels should be replaced?
      */
     @Test
-    public void shouldReplaceEachOccurrenceOfAContinuousSetOfVowelsWithWordMommy(){
+    public void shouldReplaceEachOccurrenceOfAContinuousSetOfVowelsWithWordMommy() {
         assertEquals("hmommyllmommy", mommifier.mommify("heaelloee"));
     }
 
     @Test
-    public void shouldMommifyStringHavingUppercaseCharacters(){
+    public void shouldMommifyStringHavingUppercaseCharacters() {
         assertEquals("pmommylmommy", mommifier.mommify("paULA"));
     }
 
     @Test
-    public void shouldNotMommifyNullString(){
+    public void shouldNotMommifyNullString() {
         assertNull(mommifier.mommify(null));
     }
 }

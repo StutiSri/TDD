@@ -11,7 +11,7 @@ class Mommifier {
         TODO: What is this thirty percent intended to do? Do you think the name is good enough?
         What is it's significance?
      */
-    private final double THIRTY_PERCENT = 0.30;
+    private final double THRESHOLD_PERCENTAGE_OF_VOWELS_FOR_MOMMIFICATION = 0.30;
 
     private static final List<Character> vowelList = Arrays.asList('a', 'e', 'i', 'o', 'u');
 
@@ -42,7 +42,7 @@ class Mommifier {
 
     private String next(char[] inputCharacters, int currentIndex, int previousIndex) {
         char currentCharacter = inputCharacters[currentIndex];
-        if(isVowel(currentCharacter)){
+        if (isVowel(currentCharacter)) {
             if (previousIndex < 0 || !isVowel(inputCharacters[previousIndex]))
                 return MOMMY;
             return "";
@@ -67,7 +67,7 @@ class Mommifier {
 
         double percentageOfVowelsPresentInString = (double) countOfVowels / (double) input.length();
 
-        return percentageOfVowelsPresentInString > THIRTY_PERCENT;
+        return percentageOfVowelsPresentInString > THRESHOLD_PERCENTAGE_OF_VOWELS_FOR_MOMMIFICATION;
     }
 
     private int getCountOfVowels(String input) {
