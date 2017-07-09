@@ -58,6 +58,8 @@ public class MommifierTest {
         TODO: I am confused as to what are you trying to test.
         Are you testing that multiple vowels in string should be replaced or
         consecutive vowels should be replaced?
+        -Testing both the things, multiple occurrences of a continuous set
+        of vowels should be replaced
      */
     @Test
     public void shouldReplaceEachOccurrenceOfAContinuousSetOfVowelsWithWordMommy() {
