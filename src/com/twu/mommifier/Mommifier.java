@@ -6,7 +6,11 @@ import java.util.List;
 class Mommifier {
     private final String MOMMY = "mommy";
     //TODO: Very long name. How about "THRESHOLD_VOWEL_PERCENTAGE"?
-    private final double THRESHOLD_PERCENTAGE_OF_VOWELS_FOR_MOMMIFICATION = 0.30;
+    /**
+     * I thought about it, but seemed that it was not giving the intent of
+     * the threshold percentage. But I like this one better :D
+     */
+    private final double THRESHOLD_VOWEL_PERCENTAGE = 0.30;
 
     private static final List<Character> vowelList = Arrays.asList('a', 'e', 'i', 'o', 'u');
 
@@ -65,7 +69,7 @@ class Mommifier {
 
         double percentageOfVowelsPresentInString = (double) countOfVowels / (double) input.length();
 
-        return percentageOfVowelsPresentInString > THRESHOLD_PERCENTAGE_OF_VOWELS_FOR_MOMMIFICATION;
+        return percentageOfVowelsPresentInString > THRESHOLD_VOWEL_PERCENTAGE;
     }
 
     private int getCountOfVowels(String input) {
