@@ -44,6 +44,11 @@ class Mommifier {
             return "";
         }
         //TODO: Does this need to return a string?
+        /**
+         * Since we are returning a String - Mommy from this method,
+         * if we have to return a character - it has to be string as well right?
+         * We cannot have multiple return types.
+         */
         return Character.toString(currentCharacter);
     }
 
