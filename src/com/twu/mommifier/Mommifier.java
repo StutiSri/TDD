@@ -58,8 +58,10 @@ class Mommifier {
          */
         //TODO: Good point. Try removing this block and run your tests
 
-        if (countOfVowels == 0)
-            return false;
+        /**
+         * Some magic took place and I am not getting any arithmetic exception
+         * even on divide by zero.
+         */
 
         double percentageOfVowelsPresentInString = (double) countOfVowels / (double) input.length();
 
